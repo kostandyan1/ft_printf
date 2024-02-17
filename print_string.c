@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	print_string(char *s)
 {
@@ -22,7 +22,7 @@ int	print_string(char *s)
 		ft_putchar_fd(s[i], 1);
 		i++;
 	}
-	return (0);
+	return (i);
 }
 /*
 int	main(void)

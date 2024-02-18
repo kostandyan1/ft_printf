@@ -6,11 +6,11 @@
 /*   By: vkostand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 20:11:41 by vkostand          #+#    #+#             */
-/*   Updated: 2024/02/01 16:31:18 by vkostand         ###   ########.fr       */
+/*   Updated: 2024/02/18 15:18:11 by vkostand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
 char	*ft_strchr(const char *s, int c)
 {

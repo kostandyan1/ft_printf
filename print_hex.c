@@ -6,7 +6,7 @@
 /*   By: vkostand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 16:20:45 by vkostand          #+#    #+#             */
-/*   Updated: 2024/02/14 16:20:47 by vkostand         ###   ########.fr       */
+/*   Updated: 2024/02/18 15:18:24 by vkostand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static int	create_string(unsigned int n)
 {
 	int	i;
 
-	i = 1;
+	i = 0;
 	while (n != 0)
 	{
 		n /= 16;
@@ -41,25 +41,25 @@ static int	write_str(unsigned int n, int mp)
 
 int	print_hex(unsigned int n, int mp)
 {
-	int i;
+	int	i;
 
 	if (n == 0)
 	{
 		print_char('0');
-		return (0);
+		return (1);
 	}
 	i = create_string(n);
 	write_str(n, mp);
 	return (i);
 }
-
+/*
 int	main(void)
 {
 	unsigned int a = 1000;
 
 	print_hex(a, 87);
 	return (0);
-}
+}*/
 /*char *fill_str(unsigned int n, char *str)
 {
 	int c;

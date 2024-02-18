@@ -6,7 +6,7 @@
 /*   By: vkostand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 15:52:15 by vkostand          #+#    #+#             */
-/*   Updated: 2024/02/17 18:16:25 by vkostand         ###   ########.fr       */
+/*   Updated: 2024/02/18 15:18:34 by vkostand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,11 +56,17 @@ int	print_ptr(void *ptr)
 	unsigned long long	s;
 	int					count;
 
-	count = 0;
+	if (!ptr)
+	{
+		write (1, "0x0", 3);
+		return (3);
+	}
+	count = 1;
 	s = (unsigned long long)ptr;
 	write (1, "0x", 2);
+	count += create_string(s);
 	print_hexa(s, 87);
-	return (0);
+	return (count);
 }
 /*
 int main()

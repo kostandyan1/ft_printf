@@ -6,16 +6,15 @@
 /*   By: vkostand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 18:30:39 by vkostand          #+#    #+#             */
-/*   Updated: 2024/02/13 18:30:40 by vkostand         ###   ########.fr       */
+/*   Updated: 2024/02/18 15:28:02 by vkostand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
-#include <stdarg.h>
+#include "ft_printf.h"
 
-int	find_func(char c, void *s)
+static int	find_func(char c, void *s)
 {
-	unsigned int i;
+	unsigned int	i;
 
 	i = 0;
 	if (c == 'c')
@@ -39,25 +38,27 @@ int	find_func(char c, void *s)
 
 int	ft_printf(const char *str, ...)
 {
-	va_list	args;
-	unsigned int i;
+	va_list			args;
+	unsigned int	i;
+	int				count;
 
+	count = 0;
 	i = 0;
 	va_start(args, str);
-	while (*str)
+	while (str[i])
 	{
-		if (*str == '%')
+		if (str[i] == '%')
 		{
-			str++;
-			if (ft_strchr("ucspdixX", *str))
-				i += find_func(*str, va_arg(args, void *));
-			else if(*str == '%')
-				i += print_char('%');
+			i++;
+			if (ft_strchr("ucspdixX", str[i]))
+				count += find_func(str[i], va_arg(args, void *));
+			else if (str[i] == '%')
+				count += print_char('%');
 		}
-		else 
-			ft_putchar_fd(*str, 1);
-		str++;
+		else
+			count += print_char(str[i]);
+		i++;
 	}
 	va_end(args);
-	return (0);
+	return (count);
 }

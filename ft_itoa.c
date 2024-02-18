@@ -6,11 +6,11 @@
 /*   By: vkostand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 20:11:44 by vkostand          #+#    #+#             */
-/*   Updated: 2024/02/03 20:16:33 by vkostand         ###   ########.fr       */
+/*   Updated: 2024/02/18 15:17:44 by vkostand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
 static int	chars_quantity(int n)
 {

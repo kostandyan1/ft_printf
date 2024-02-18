@@ -6,7 +6,7 @@
 /*   By: vkostand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 14:03:44 by vkostand          #+#    #+#             */
-/*   Updated: 2024/02/14 14:03:48 by vkostand         ###   ########.fr       */
+/*   Updated: 2024/02/18 15:18:30 by vkostand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int	print_int(int n)
 
 	n1 = ft_itoa(n);
 	c = print_string(n1);
+	free(n1);
 	return (c);
 }
 /*
